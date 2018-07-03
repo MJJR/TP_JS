@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" media="screen" href="todo_list.css" />
+</head>
+<body onload="loading()">
+       
+    <div class="content">
+        <h1>TODO List</h1>
+        <ul id="todolist">
+        </ul>
+        <input id="todotxt" type="text" />
+        <button id="addtodo" type="button">Ajouter</button>
+    </div>
+
+    <script type = "text/javascript">
+
+        var nbElement = 0;
+
+        document.getElementById("addtodo").onclick = ajouter;
+
+        function loading(){
+        
+        }
+
+        function ajouter(){
+            var nom = document.getElementById("todotxt").value;
+            var newParagraph = document.createElement("li");
+            var newText = document.createTextNode(nom);
+            newParagraph.appendChild(newText);
+
+
+            /*
+            var titre1 = ...
+            var att = document.createAttribute("class");
+            att.value = "democlass";
+            titre1.setAttributeNode(att);
+            */
+            
+            var att = document.createAttribute("onclick");
+            att.value = "supprimer( this );";
+            newParagraph.setAttributeNode(att);
+            
+            att = document.createAttribute("id");
+            att.value = ""+nbElement;
+            newParagraph.setAttributeNode(att);
+            
+            document.getElementById("todolist").appendChild(newParagraph);
+            
+            nbElement++;
+        }
+
+        function supprimer(obj){
+            if(confirm("Vous êtes sur le point de supprimer cette option, veuillez confirmer")){
+                obj.parentNode.removeChild(obj);
+            }
+        }
+    
+
+
+
+    </script>
+</body>
+</html>

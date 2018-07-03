@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>table , td {
+        border-style : solid;
+    }
+    </style>
+    <title>Exo3</title>
+</head>
+<body>
+
+    Je suis un titre de tableau :-)
+    <br>
+
+    <script type = "text/javascript">
+
+        var res = "<table><tr>";
+        var i = 0;
+
+        for(i ; i< 12 ; i++){
+
+            if(i % 4 == 0){
+                res = res + "</tr><tr><td>" + (i+1) + "</td>" ;
+            }
+            else{
+                res = res + "<td>"+(i+1)+"</td>";
+            }
+
+          
+        }
+
+        res = res + "</tr></table>";
+
+        document.write(res);
+        
+
+    </script>
+</body>
+</html>

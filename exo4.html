@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>table , td {
+        border-style : solid;
+    }
+    </style>
+    <title>Exo4</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="nom"></input>
+        <input type="button" onclick="afficherAge()" value="Quel age as-tu ?"></input>
+    </form>
+    <br>
+
+    <script type = "text/javascript">
+
+        var tableau = {
+            "anatole":19,
+            "bernard":45,
+            "christophe":34,
+            "dominique":55,
+            "franck":28,
+            "georges":78,
+            "lucas":12,
+            "madeleine":30,
+            "pierre":25
+        }
+
+        function chercherPersonne(nom){
+            var minuscule = nom.toLowerCase();
+            return tableau[minuscule];
+        }
+
+        function afficherAge(){
+            var leNom = document.getElementById("nom").value;
+            if(leNom != ""){
+                var resultat = chercherPersonne(leNom);
+                if(resultat != undefined){
+                    alert( leNom + " a " + resultat + " ans" );
+                }
+                else{
+                    alert("Cette personne est introuvable !!");
+                }
+                
+            }
+            else{
+                alert("Le champs est vide !");
+            }
+            
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>table , td {
+        border-style : solid;
+    }
+    </style>
+    <title>Exo6</title>
+</head>
+<body>
+    <form>
+        <input type="button" id="Rouge" value="Rouge"></input>
+        <input type="button" id="Vert" value="Vert"></input>
+        <input type="button" id="Bleu" value="Bleu"></input>
+    </form>
+    <div id='monDiv' style='height:150px; width:150px;background-color:black'></div>
+    <script type = "text/javascript">
+
+        document.getElementById('Rouge').onclick = mettreEnRouge;
+        document.getElementById('Vert').onclick = mettreEnVert;
+        document.getElementById('Bleu').onclick = mettreEnBleu;
+
+        function mettreEnRouge(){
+            document.getElementById('monDiv').style.backgroundColor='red';
+        }
+
+        function mettreEnVert(){
+            document.getElementById('monDiv').style.backgroundColor='green';
+        }
+        
+        function mettreEnBleu(){
+            document.getElementById('monDiv').style.backgroundColor='blue';
+        }
+
+
+    </script>
+</body>
+</html>

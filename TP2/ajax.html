@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table id = "contenu">
+        
+    </table>
+    <form>
+
+    </form>
+
+
+
+        <script type = "text/javascript">
+                var json = null;
+
+                function afterResultLoad() {
+                    // Typical action to be performed when the document is ready:
+                    
+                    var stringlist = "<tr><th>id</th><th>name</th><th>password</th></tr>";
+
+                    json = JSON.parse(xhttp.responseText);
+                    
+
+                    for(var i=0;i<json.users.length;i++){
+                        stringlist = stringlist+"<tr><td>"+json.users[i].id+"</td><td>"+json.users[i].name+"</td><td>"+json.users[i].password+"</td></tr>";
+                    }
+
+                    document.getElementById("contenu").innerHTML = stringlist;
+                    
+
+
+
+                }
+                var xhttp = new XMLHttpRequest();
+                xhttp.onload = afterResultLoad;
+                xhttp.open("GET" , "http://loisirs-web-backend.cleverapps.io/db" , true);
+
+                xhttp.send();
+
+
+                /*
+                Pour le post:
+                xhttp.open("POST",".../users",true);
+                xhttp.send(body); 
+                ---> Header HTTP Request : Content-Type application/xwww.form.encoded name = "toto"&password="..." <form method="POST" action = "http://.../users">
+                ---> Content-type application/json    var user = {}    user.name = "toto"
+                
+                */
+
+
+
+        </script>
+    
+</body>
+</html>
